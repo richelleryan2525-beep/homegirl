@@ -1,0 +1,40 @@
+:root{--bg:#fff1f5;--card:#fff;--ink:#3b1d2a;--mut:#8a6573;--pk:#e8386d;--ln:#f5cbd8;--paper:#fffaf0;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root{--bg:#1d1016;--card:#2a1822;--ink:#fbe6ee;--mut:#c09aab;--pk:#ff5c8a;--ln:#4a2b3a;--paper:#33202a}body{background:linear-gradient(160deg,#2a1020,#1f1530,#10202f) fixed!important}}
+*{box-sizing:border-box}
+body{margin:0;background:linear-gradient(160deg,#ffe3ec 0%,#ffeede 35%,#e3f0ff 70%,#f3e5ff 100%) fixed;color:var(--ink);font-family:system-ui,-apple-system,Segoe UI,sans-serif;min-height:100vh;overflow-x:hidden}
+.script{font-family:'Dancing Script',cursive,Georgia,serif}
+#hearts{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+#hearts span{position:absolute;bottom:-40px;opacity:.5;animation:rise linear infinite}
+@keyframes rise{to{transform:translateY(-110vh) rotate(25deg);opacity:0}}
+nav,main{position:relative;z-index:1}
+nav{display:flex;gap:6px;padding:12px;justify-content:center;flex-wrap:wrap;position:sticky;top:env(safe-area-inset-top,0px);z-index:5}
+nav button{border:1px solid var(--ln);background:var(--card);color:var(--ink);padding:9px 14px;border-radius:99px;font-size:14px;cursor:pointer}
+nav button.on{background:linear-gradient(135deg,#ff5c8a,#f59e0b);color:#fff;border-color:transparent}
+main{max-width:520px;margin:0 auto;padding:12px 16px 40px;text-align:center}
+.card{background:var(--card);border:1px solid var(--ln);border-radius:22px;padding:24px 18px;box-shadow:0 10px 30px rgba(232,56,109,.15)}
+.big{font-size:60px;margin:0}h1{font-size:30px;margin:8px 0;font-weight:700}p{color:var(--mut);margin:6px 0 18px;line-height:1.5}
+.btns{display:flex;flex-direction:column;align-items:center;gap:14px;min-height:220px;justify-content:center}
+.yes,.go{background:linear-gradient(135deg,#ff5c8a,#ff8a3d);color:#fff;border:0;border-radius:16px;font-weight:700;cursor:pointer;transition:all .3s;max-width:100%;font-size:17px;padding:13px 26px}
+.no,.ghost{background:transparent;color:var(--mut);border:1px solid var(--ln);border-radius:12px;cursor:pointer;transition:all .3s;padding:10px 16px}
+input[type=text],input[type=date],input[type=time]{width:100%;min-width:0;padding:12px;border-radius:12px;border:1px solid var(--ln);background:var(--bg);color:var(--ink);font-size:16px}
+.add input{flex:1}
+.field{text-align:left;margin:0 0 14px}.field label{display:block;font-weight:700;margin-bottom:6px;color:var(--ink)}
+.letter{background:var(--paper);border:1px solid var(--ln);border-radius:6px;padding:26px 20px;text-align:left;font-size:25px;line-height:1.45;color:var(--ink);box-shadow:0 8px 24px rgba(0,0,0,.08);transform:rotate(-.6deg)}
+.letter p{color:var(--ink);margin:0 0 14px;opacity:0;animation:fade .9s forwards}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+ul{list-style:none;padding:0;margin:0 0 14px;text-align:left}
+li{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:11px 12px;border:1px solid var(--ln);border-radius:12px;margin-bottom:8px}
+li button{border:0;background:none;color:var(--pk);font-size:20px;cursor:pointer}
+.add{display:flex;gap:8px}.add button{background:var(--pk);color:#fff;border:0;border-radius:12px;padding:0 16px;font-weight:700;cursor:pointer}
+.gifts{display:grid;gap:12px;margin:14px 0}
+.gift{border:0;border-radius:18px;padding:16px;color:#fff;text-align:left;cursor:pointer;display:flex;gap:14px;align-items:center;font-size:15px;box-shadow:0 8px 20px rgba(0,0,0,.15);transition:transform .2s;font-family:inherit}
+.gift:active{transform:scale(.97)}
+.gift b{display:block;font-size:19px;margin-bottom:2px}.gift .e{font-size:40px}
+.g1{background:linear-gradient(135deg,#ff5c8a,#ff8fab)}
+.g2{background:linear-gradient(135deg,#38bdf8,#818cf8)}
+.g3{background:linear-gradient(135deg,#f59e0b,#f43f5e)}
+.g4{background:linear-gradient(135deg,#2dd4bf,#38bdf8)}
+.gift.sel{outline:4px solid var(--pk);outline-offset:3px}
+.row2{display:flex;justify-content:space-between;gap:10px;padding:12px;border:1px solid var(--ln);border-radius:12px;margin-bottom:8px;text-align:left}
+.row2 span{color:var(--mut)}.row2 b{text-align:right}
+.pop{animation:pop .6s}@keyframes pop{from{transform:scale(.85);opacity:0}to{transform:scale(1);opacity:1}}
